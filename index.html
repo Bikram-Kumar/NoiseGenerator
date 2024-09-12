@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html style="background:#242424" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>noise</title>
+</head>
+<body>
+    
+    <canvas style="background:#ffffff;margin-left:20px;" id="cnvs" width="300" height="300">hdjdj</canvas>
+    
+    
+    
+    
+    <script type="module" charset="utf-8">
+        import {NoiseGenerator} from "./NoiseGenerator.js";
+        
+        var ctx = document.getElementById('cnvs').getContext('2d');
+        window.s = 1;
+        ctx.canvas.onclick = () => {
+            setInterval(()=>{
+                NoiseGenerator.noise(ctx);
+                window.s += 0.01;
+                
+            }, 20);
+            console.log(window.s);
+        }
+        
+    </script>
+</body>
+</html>
